@@ -1,0 +1,81 @@
+*{
+    margin: 0px;
+}
+nav{
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    font-size: 3.5em;
+    background-color: aliceblue;
+    text-align: center;
+}
+.container{
+    display: grid;
+    gap: 50px;
+    left: 50px;
+    position: relative;
+    grid-template-columns: repeat(5, 1fr); 
+}
+.container a {
+    text-decoration: none;
+    
+}
+.container img {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #000;
+    border-radius: 8px;
+}
+
+/* Transition part */
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    transition: width 2s linear 0s, height 2s ease-in, transform 2s;
+    
+}
+.box:hover { 
+    width: 200px;
+    height: 200px;
+    transform: rotate(360deg);
+}
+
+/* Filter part */
+.filterDiv {
+    float: left;
+    background-color: #fff;
+    color: #ffffff;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+    margin: 2px;
+    display: none;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .container {
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #daa520;
+  }
+  
+  .btn.active {
+    background-color: #daa520;
+    color: white;
+  }

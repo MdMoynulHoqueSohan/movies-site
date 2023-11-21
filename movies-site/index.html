@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTP Sites</title>
+    <link rel="stylesheet" href="../movies-site/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+        <h1>Movies Site</h1>
+        </nav>
+    </header>
+    <section class="site-info">
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('ftp')"> FTP</button>
+            <button class="btn" onclick="filterSelection('live-tv')"> Live TV</button>
+            <button class="btn" onclick="filterSelection('radio')"> Radio</button>
+          </div>
+        <div class="container">
+                <div class="filterDiv ftp">
+                    <a href="http://ctgmovies.com/" target="_blank"><img src="../movies-site/images/ctgmovies.png" class="box">CTG Movies</a>
+                </div>
+                <div class="filterDiv colors ftp">
+                    <a href="http://www.dhakamovie.com/index.php" target="_blank"><img src="../movies-site/images/dhakamovie.jpg" class="box">Dhaka Movie</a>
+                </div>
+                <div class="filterDiv live-tv">
+                    <a href="http://10.16.100.244/" target="_blank"><img src="" class="box">Local Server</a>
+                </div>
+                <div class="filterDiv ftp">
+                    <a href="https://crazyctg.com/" target="_blank"><img src="../movies-site/images/carzyctg.png" class="box">Crazy CTG</a>
+                </div>
+                <div class="filterDiv ftp">
+                    <a href="http://nagordola.com.bd" target="_blank"><img src="../movies-site/images/nagordola.jpg" class="box">Nagordola</a>
+                </div>
+                <div class="filterDiv ftp">
+                    <a href="http://172.16.50.4" target="_blank"><img src="../movies-site/images/samonline.jpg" class="box">Sam FTP</a>
+                </div>
+                <div class="filterDiv live-tv">
+                    <a href="http://bdixtv.live/" target="_blank"><img src="../movies-site/images/bdixtv.png" class="box">BDIX TV</a>
+                </div>
+                <div class="filterDiv live-tv">
+                    <a href="http://www.ctgtv.live/" target="_blank"><img src="../movies-site/images/ctgtv.webp" class="box">CTG TV</a>
+                </div>
+                <div class="filterDiv live-tv">
+                    <a href="http://ddn.oncast.me/" target="_blank"><img src="../movies-site/images/oncast.jpg" class="box">Oncast</a>
+                </div>
+                <div class="filterDiv fruits live-tv">
+                    <a href="https://toffeelive.com/" target="_blank"><img src="../movies-site/images/toffeelive.gif" class="box">Toffee live</a>
+                </div>
+                <div class="filterDiv live-tv">
+                    <a href="http://172.16.50.3/" target="_blank"><img src="" class="box">Local Server</a>
+                </div>
+                <div class="filterDiv ftp">
+                    <a href="http://172.16.172.112/" target="_blank"><img src="" class="box">Local Server</a>
+                </div>
+                <div class="filterDiv radio">
+                    <a href="https://radio.garden/visit/dhaka/4JpFDPX6?r=1" target="_blank"><img src="../movies-site/images/radiogarden.png" class="box">Radio Garden</a>
+                </div>
+            </div>              
+        <!-- <div class="site-description">
+            <h2>Need Latest Movies Follow Us..!</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, ea, ipsam eaque ipsa ducimus harum eum enim similique saepe impedit fugiat dignissimos veritatis! Porro ipsum numquam corrupti consequuntur, quis sed?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam odio earum harum cumque maiores omnis! Consectetur modi quasi iste ea, accusantium veniam, perferendis ipsa corporis, soluta natus velit eveniet! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos ad veniam quis, reiciendis odit neque sapiente excepturi quaerat reprehenderit dolore iusto minima molestiae labore earum consequuntur adipisci molestias libero quas. Quos eveniet laudantium iusto, sit alias sed, in ipsam voluptates dolorum mollitia nobis rem. Dolor nihil recusandae maiores earum sapiente ipsam libero architecto! Dolor quae maiores voluptatem provident magni beatae!
+            </p>
+        </div> -->
+    </section>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+          var x, i;
+          x = document.getElementsByClassName("filterDiv");
+          if (c == "all") c = "";
+          for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+          }
+        }
+        
+        function w3AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+          }
+        }
+        
+        function w3RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+        
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+          });
+        }
+        </script>
+</body>
+</html>
